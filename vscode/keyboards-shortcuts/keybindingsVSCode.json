@@ -1,0 +1,72 @@
+[ // Coloque seus atalhos de teclado neste arquivo para substituir o defaultsauto[]
+  { 
+    "key": "ctrl+alt+i",
+    "command": "python.execInTerminal-icon"
+  },
+  {
+    "key": "ctrl+shift+alt",
+    "command": "python.runLinting"
+  },
+  { // Python Terminal
+    "key": "ctrl+alt+p",
+    "command": "python.execInTerminal"
+  },
+  { // Encasulamento
+    "key": "ctrl+alt+enter",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "ctrl+abnt_c1",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+oem_2",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "-editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  { // Formatação Automatica
+    "key": "shift+f",
+    "command": "notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  { // Formatação Automatica
+    "key": "shift+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  { // Formatação Automatica
+    "key": "shift+f",
+    "command": "editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  { // Abrir terminal Interno
+    "key": "alt+oem_3",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  { // Avrir terminal Externo
+    "key": "ctrl+shift+c",
+    "command": "workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  { // Fechar terminal Interno
+    "key": "alt+w",
+    "command": "workbench.action.terminal.kill"
+  }
+]
