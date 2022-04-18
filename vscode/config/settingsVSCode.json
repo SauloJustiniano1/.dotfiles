@@ -22,6 +22,8 @@
 	"editor.minimap.enabled": true, // Ativar ou Desabilita o Mini Map
 	"editor.wordWrap": "on", // Quebra Automatica de linha
 
+	"diffEditor.ignoreTrimWhitespace": false,
+
 	// Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
 	"editor.rulers": [120, 150],
 
@@ -31,7 +33,8 @@
 	"polacode.backgroundColor": "#6633CC",
 	
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": true,
+		// "source.organizeImports": true
 	},
 	
 	"gitlens.codeLens.recentChange.enabled": false,
@@ -42,6 +45,14 @@
 
 	"material-icon-theme.activeIconPack": "nest",
 	"screencastMode.onlyKeyboardShortcuts": true,
+
+	"eslint.validate": [],
+
+	// Efeito do cursos piscando
+	"editor.cursorBlinking": "solid",
+	
+	// Efeito de navegação em 200FPS
+	"editor.cursorSmoothCaretAnimation": true,
 
 	"[prisma]": {
 		"editor.formatOnSave": true
@@ -124,14 +135,13 @@
 
 	"discord.enabled": true,
 
-	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.hg": true,
-		"**/CVS": true,
-		"**/.DS_Store": true
-		// "**/node_modules": true
-	},
+  "files.exclude" : {
+    "**\/CVS" : true,
+    "**\/.DS_Store" : true,
+    "**\/.hg" : true,
+    "**\/.svn" : true,
+    "**\/.git" : true
+  },
 
 	"files.associations": {
 		".sequelizerc": "javascript",
@@ -148,7 +158,7 @@
 		"ormconfig.json": "database",
 		"tsconfig.json": "tune",
 		"*.proto": "3d",
-		"*.webpack.js": "webpack"
+		"*.webpack.js": "webpack",
 	},
 
 	"material-icon-theme.languages.associations": {
@@ -178,7 +188,7 @@
 		"mappers": "meta",
 		"_shared": "shared",
 		"eslint-config": "tools",
-		"kube": "kubernetes"
+		"kube": "kubernetes",
 	},
 	
 	"window.menuBarVisibility": "toggle",
