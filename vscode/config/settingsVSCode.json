@@ -1,350 +1,470 @@
 {
   // Define o tema do VSCode
-	"workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula",
 
-	// Define o tema dos ícones na sidebar
-	"workbench.iconTheme": "material-icon-theme",
+  // Define o tema dos ícones na sidebar
+  "workbench.iconTheme": "material-icon-theme",
 
-	"workbench.productIconTheme": "fluent-icons",
+  "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "newUntitledFile", // Abre sempre um arquivo em branco
 
-	"workbench.panel.defaultLocation": "bottom", // Deixa o terminal em baixo
-	"workbench.editor.labelFormat": "short",
-	"explorer.compactFolders": false,
+  "workbench.panel.defaultLocation": "bottom", // Deixa o terminal em baixo
+  "workbench.editor.labelFormat": "short",
+  "explorer.compactFolders": false,
 
-	// Configurações Gerais do VsCode
-	"editor.tabSize": 2,
-	"editor.fontSize": 14, // Tamanho da Fonte  
-	"editor.lineHeight": 20,
-	"editor.fontFamily": "FiraCode Nerd Font", // Fonte Padrão
-	"editor.fontLigatures": true,
-	"editor.semanticHighlighting.enabled": false,
-	"editor.minimap.enabled": true, // Ativar ou Desabilita o Mini Map
-	"editor.wordWrap": "on", // Quebra Automatica de linha
+  "workbench.editor.tabSizing": "shrink",
+  "files.autoSave": "off", // Salvar arquivos automáticos (off - nunca salva automático)
 
-	"diffEditor.ignoreTrimWhitespace": false,
+  // Configurações Gerais do VsCode
+  "editor.tabSize": 2,
+  "editor.fontSize": 14, // Tamanho da Fonte
+  "editor.lineHeight": 20,
+  "editor.fontFamily": "FiraCode Nerd Font", // Fonte Padrão
+  "editor.fontLigatures": true,
+  "editor.semanticHighlighting.enabled": false,
+  "editor.minimap.enabled": true, // Ativar ou Desabilita o Mini Map
+  "editor.wordWrap": "on", // Quebra Automatica de linha
 
-	// Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
-	"editor.rulers": [120, 150],
+  "diffEditor.ignoreTrimWhitespace": false,
 
-	// Aplica um sinal visual na esquerda da linha selecionada
-	"editor.renderLineHighlight": "gutter",
+  // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
+  "editor.rulers": [120, 150],
 
-	"polacode.backgroundColor": "#6633CC",
-	
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true,
-		// "source.organizeImports": true
-	},
-	
-	"gitlens.codeLens.recentChange.enabled": false,
-	"gitlens.codeLens.authors.enabled": false,
-	"gitlens.codeLens.enabled": false,
+  // Aplica um sinal visual na esquerda da linha selecionada
+  "editor.renderLineHighlight": "gutter",
 
-	"liveshare.featureSet": "insiders", 
+  "polacode.backgroundColor": "#6633CC",
 
-	"material-icon-theme.activeIconPack": "nest",
-	"screencastMode.onlyKeyboardShortcuts": true,
-
-	"eslint.validate": [],
-
-	// Efeito do cursos piscando
-	"editor.cursorBlinking": "solid",
-	
-	// Efeito de navegação em 200FPS
-	"editor.cursorSmoothCaretAnimation": true,
-
-	"[prisma]": {
-		"editor.formatOnSave": true
-	},
-
-	"[python]": {
-		"editor.wordBasedSuggestions": false,
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "ms-python.python"
-	},
-
-	"[css]": {
-		"editor.suggest.insertMode": "replace",
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "vscode.css-language-features"
-	},
-
-	"[html]": {
-		"editor.suggest.insertMode": "replace",
-		"editor.formatOnSave": false,
-		"editor.defaultFormatter": "vscode.html-language-features"
-	},
-	
-	"[jsonc]": {
-		"editor.quickSuggestions": {
-			"strings": true
-		},
-		"editor.suggest.insertMode": "replace",
-		"editor.formatOnSave": false,
-		"editor.defaultFormatter": "vscode.json-language-features"
-	},
-
-	"[json]": {
-		"editor.quickSuggestions": {
-			"strings": true
-		},
-		"editor.suggest.insertMode": "replace",
-		"editor.formatOnSave": false,
-		"editor.defaultFormatter": "vscode.json-language-features"
-	},
-
-	"[javascript]": {
-		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
-		},
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-
-	"[javascriptreact]": {
-		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
-		},
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-
-	"[typescript]": {
-		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
-		},
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-
-	"[typescriptreact]": {
-		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
-		},
-		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-
-	// Security
-	"security.workspace.trust.banner": "untilDismissed",
-	"security.workspace.trust.emptyWindow": true,
-	"security.workspace.trust.untrustedFiles": "newWindow",
-	"security.workspace.trust.startupPrompt": "once",
-	"security.workspace.trust.enabled": true,
-
-	"discord.enabled": true,
-
-  "files.exclude" : {
-    "**\/CVS" : true,
-    "**\/.DS_Store" : true,
-    "**\/.hg" : true,
-    "**\/.svn" : true,
-    "**\/.git" : true
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+    // "source.organizeImports": true
   },
 
-	"files.associations": {
-		".sequelizerc": "javascript",
-		".stylelintrc": "json",
-		".prettierrc": "json",
-		"*.json": "jsonc",
-		"*.tsx": "typescriptreact",
-		".env.*": "dotenv",
-		".vimrc": "plaintext",
-		"*.bak": "jsonc"
-	},
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
 
-	"material-icon-theme.files.associations": {
-		"ormconfig.json": "database",
-		"tsconfig.json": "tune",
-		"*.proto": "3d",
-		"*.webpack.js": "webpack",
-	},
+  "liveshare.featureSet": "insiders",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
 
-	"material-icon-theme.languages.associations": {
-		"dotenv": "tune"
-	},
+  "material-icon-theme.activeIconPack": "nest",
+  "screencastMode.onlyKeyboardShortcuts": true,
 
-	"material-icon-theme.folders.associations": {
-		"infra": "app",
-		"entities": "class",
-		"domain": "class",
-		"schemas": "class",
-		"typeorm": "database",
-		"repositories": "mappings",
-		"http": "container",
-		"migrations": "tools",
-		"modules": "components",
-		"implementations": "core",
-		"dtos": "typescript",
-		"fakes": "mock",
-		"websockets": "pipe",
-		"protos": "pipe",
-		"grpc": "pipe",
-		"providers": "include",
-		"subscribers": "messages",
-		"useCases": "controller",
-		"kafka": "scripts",
-		"mappers": "meta",
-		"_shared": "shared",
-		"eslint-config": "tools",
-		"kube": "kubernetes",
-	},
-	
-	"window.menuBarVisibility": "toggle",
-	"tabnine.experimentalAutoImports": true,
-	"cSpell.enableFiletypes": [
-		"!asciidoc",
-		"!c",
-		"!cpp",
-		"!csharp",
-		"!go",
-		"!handlebars",
-		"!haskell",
-		"!jade",
-		"!java",
-		"!latex",
-		"!php",
-		"!pug",
-		"!python",
-		"!restructuredtext",
-		"!rust",
-		"!scala",
-		"!scss"
-	],
+  "eslint.validate": [],
+  "html.validate.styles": true,
+  "php.validate.executablePath": "php",
 
-	"editor.guides.bracketPairsHorizontal": "active",
-	"editor.bracketPairColorization.enabled": false, // Ativar ou Desativar o bracketPairs do Vscode
-	"editor.guides.bracketPairs": false,
-	"editor.guides.highlightActiveBracketPair": true,
+  "editor.snippetSuggestions": "top",
+  "editor.unicodeHighlight.invisibleCharacters": false,
 
-	// Bracket Pair Colorizer 2
-	// Habilitar a correspondência do bracket nativos
-	"bracket-pair-colorizer-2.colorMode": "Consecutive",
-	"bracket-pair-colorizer-2.forceIterationColorCycle": true,
-	"bracket-pair-colorizer-2.showVerticalScopeLine": true,
-	"bracket-pair-colorizer-2.showHorizontalScopeLine": true,
-	"bracket-pair-colorizer-2.scopeLineRelativePosition": true,
-	"bracket-pair-colorizer-2.depreciation-notice": false,
+  // Emmet Abbreviation
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.showSuggestionsAsSnippets": true,
 
-	//Config geral
-	"bracket-pair-colorizer-2.colors": [
-		"Gold",
-		"Orchid",
-		"LightSkyBlue"
-	],
-	
-	// Config do CSS
-	"bracket-pair-colorizer-2.scopeLineCSS": [
-		"borderStyle: solid",
-		"borderWidth: 1px",
-		"borderColor: {color}",
-		"opacity: 0.5"
-	],
+  "emmet.excludeLanguages": ["markdown"],
 
-	"window.zoomLevel": 0,
-	"extensions.ignoreRecommendations": true,
-	"emmet.syntaxProfiles": { "javascript": "jsx" },
-	"emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "on"
+  },
 
-	// Auto Imports VSCode
-	"editor.foldingImportsByDefault": true,
-	
-	// Typescript
-	"typescript.preferences.importModuleSpecifier": "shortest",
-	"typescript.preferences.importModuleSpecifierEnding": "auto",
-	"typescript.suggest.autoImports": true,
-	"typescript.suggest.includeCompletionsForImportStatements": true,
-	"typescript.updateImportsOnFileMove.enabled": "never",
-	"typescript.tsserver.log": "off",
-	
-	// JavaScript
-	"javascript.preferences.importModuleSpecifier": "shortest",
-	"javascript.preferences.importModuleSpecifierEnding": "auto",
-	"javascript.suggest.autoImports": true,
-	"javascript.suggest.includeCompletionsForImportStatements": true,
-	"javascript.updateImportsOnFileMove.enabled": "never",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "pug"
+  },
 
-	"git.enableSmartCommit": true, // Habilita Smart Commit do GIT 
-	"git.autofetch": true, // Habilita Auto Fetch do GIT
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
 
-	"breadcrumbs.enabled": true,
-	"editor.parameterHints.enabled": false,
-	"explorer.confirmDragAndDrop": false,
-	"explorer.confirmDelete": false,
-	"workbench.activityBar.visible": true,
-	"workbench.editorAssociations": {"*.ipynb": "jupyter-notebook"},
+  // Efeito do cursos piscando
+  "editor.cursorBlinking": "solid",
 
-	// Windows Terminal
-	// PowerShell no terminal padrão do VSCode
-	"terminal.external.windowsExec": "C:\\Users\\SauloJustiniano\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\wt.exe",
-	"terminal.external.osxExec": "Terminal.app",
-	"terminal.external.linuxExec": "xterm",
-	"terminal.integrated.tabs.enabled": true,
-	"terminal.integrated.cursorStyle": "block", // Deixa o cursor do terminal como Block
-	"terminal.integrated.defaultLocation": "view",
+  // Efeito de navegação em 200FPS
+  "editor.cursorSmoothCaretAnimation": true,
 
-	// Tamanho da fonte do terminal
-	"terminal.integrated.fontSize": 14, 
+  // Formatter - Prettier
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.arrowParens": "avoid",
+  "prettier.endOfLine": "auto",
 
-	// PowerShell no VSCode (Windows Terminal)
-	"terminal.integrated.defaultProfile.windows": "PowerShell",
-	"terminal.integrated.profiles.windows": {
-		"PowerShell": {
-			"source": "PowerShell",
-			"icon": "terminal-powershell",
-			"args": [
-				"-ExecutionPolicy",
-				"Bypass",
-				"-nologo"
-			]
-		}
-	},
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true
+  },
 
-	"notebook.cellToolbarLocation": {
-		"default": "right",
-		"jupyter-notebook": "left"
-	},
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true
+  },
 
-	"python.defaultInterpreterPath": "C:\\Users\\SauloJustiniano\\AppData\\Local\\Microsoft\\WindowsApps\\python3.10.exe",
-	"python.analysis.autoImportCompletions": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
 
-	// Format On Save / linguagem TypeScript e JavaScript / null - Todas as linguagens
-	"editor.formatOnSave": true, // Formata o código sempre que salvamos  
-	// "editor.defaultFormatter": "null",
+  "[python]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true,
+    "editor.wordBasedSuggestions": false
+  },
 
-	"sync.gist": "248544c7b4ec76f4142bcf202b53e3ed",
-	"sync.autoDownload": true,
-	"sync.autoUpload": true,
-	"sync.quietSync": true,
-	"editor.unicodeHighlight.nonBasicASCII": false,
-	"editor.unicodeHighlight.ambiguousCharacters": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  },
 
-	"cSpell.language": "en,pt",
-	"editor.suggestSelection": "first",
-	"codesnap.backgroundColor": "transparent",
-	"codesnap.transparentBackground": true,
-	"codesnap.boxShadow": "0 0 0",
-	"liveServer.settings.donotVerifyTags": true,
-	"liveServer.settings.donotShowInfoMsg": true,
-	"cSpell.userWords": [
-		"chakra",
-		"middlewares",
-		"prefetch",
-		"rocketseat",
-		"upsert"
-	],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  },
 
-	"splitHTMLAttributes.closingBracketOnNewLine": true,
-	"todo-tree.general.tags": [
-		"BUG",
-		"HACK",
-		"FIXME",
-		"TODO",
-		"XXX",
-		"[ ]",
-		"[x]"
-	],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
 
-	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+
+  "[prisma]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[php]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[java]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[c]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[powershell]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[markdown-math]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[markdown_latex_combined]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // Security
+  "security.workspace.trust.banner": "untilDismissed",
+  "security.workspace.trust.emptyWindow": true,
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "security.workspace.trust.startupPrompt": "once",
+  "security.workspace.trust.enabled": true,
+
+  "discord.enabled": true,
+
+  "files.exclude": {
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/.git": true
+  },
+
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "*.json": "jsonc",
+    "*.tsx": "typescriptreact",
+    ".env.*": "dotenv",
+    ".vimrc": "plaintext",
+    "*.bak": "jsonc"
+  },
+
+  "material-icon-theme.files.associations": {
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.proto": "3d",
+    "*.webpack.js": "webpack"
+  },
+
+  "material-icon-theme.languages.associations": {
+    "dotenv": "tune"
+  },
+
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "domain": "class",
+    "schemas": "class",
+    "typeorm": "database",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules": "components",
+    "implementations": "core",
+    "dtos": "typescript",
+    "fakes": "mock",
+    "websockets": "pipe",
+    "protos": "pipe",
+    "grpc": "pipe",
+    "providers": "include",
+    "subscribers": "messages",
+    "useCases": "controller",
+    "kafka": "scripts",
+    "mappers": "meta",
+    "_shared": "shared",
+    "eslint-config": "tools",
+    "kube": "kubernetes"
+  },
+
+  "tabnine.experimentalAutoImports": true,
+  "cSpell.enableFiletypes": [
+    "!asciidoc",
+    "!c",
+    "!cpp",
+    "!csharp",
+    "!go",
+    "!handlebars",
+    "!haskell",
+    "!jade",
+    "!java",
+    "!latex",
+    "!php",
+    "!pug",
+    "!python",
+    "!restructuredtext",
+    "!rust",
+    "!scala",
+    "!scss"
+  ],
+
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.bracketPairColorization.enabled": false, // Ativar ou Desativar o bracketPairs do Vscode
+  "editor.guides.bracketPairs": false,
+  "editor.guides.highlightActiveBracketPair": true,
+
+  // Bracket Pair Colorizer 2
+  // Habilitar a correspondência do bracket nativos
+  "bracket-pair-colorizer-2.colorMode": "Consecutive",
+  "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": true,
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": true,
+  "bracket-pair-colorizer-2.scopeLineRelativePosition": true,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+
+  //Config geral
+  "bracket-pair-colorizer-2.colors": ["Gold", "Orchid", "LightSkyBlue"],
+
+  // Config do CSS
+  "bracket-pair-colorizer-2.scopeLineCSS": [
+    "borderStyle: solid",
+    "borderWidth: 1px",
+    "borderColor: {color}",
+    "opacity: 0.5"
+  ],
+
+  "window.zoomLevel": 0,
+  "extensions.ignoreRecommendations": true,
+
+  // Auto Imports VSCode
+  "editor.foldingImportsByDefault": true,
+
+  // Typescript
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.includeCompletionsForImportStatements": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "typescript.tsserver.log": "off",
+
+  // JavaScript
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "javascript.preferences.importModuleSpecifierEnding": "auto",
+  "javascript.suggest.autoImports": true,
+  "javascript.suggest.includeCompletionsForImportStatements": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+
+  "git.enableSmartCommit": true, // Habilita Smart Commit do GIT
+  "git.autofetch": true, // Habilita Auto Fetch do GIT
+
+  "breadcrumbs.enabled": true,
+  "editor.parameterHints.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "workbench.activityBar.visible": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.jar": "default",
+    "*.mp3": "default"
+  },
+
+  // Windows Terminal
+  // PowerShell no terminal padrão do VSCode
+  "terminal.external.windowsExec": "C:\\Users\\SauloJustiniano\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\wt.exe",
+  "terminal.external.osxExec": "Terminal.app",
+  "terminal.external.linuxExec": "xterm",
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.cursorStyle": "block", // Deixa o cursor do terminal como Block
+  "terminal.integrated.defaultLocation": "view",
+
+  // Tamanho da fonte do terminal
+  "terminal.integrated.fontSize": 14,
+
+  // PowerShell no VSCode (Windows Terminal)
+  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-ExecutionPolicy", "Bypass", "-nologo"]
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu"]
+    }
+  },
+
+  // Linux no VSCode (Windows Terminal)
+  "terminal.integrated.defaultProfile.linux": "zsh (2)",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/usr/bin/flatpak-spawn",
+      "args": ["--host", "--env=TERM=xterm-256color", "bash"]
+    },
+    "zsh": {
+      "path": "/usr/bin/flatpak-spawn",
+      "args": ["--host", "zsh"]
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
+  "python.defaultInterpreterPath": "C:\\Users\\SauloJustiniano\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+  "python.analysis.autoImportCompletions": true,
+  "python.autoComplete.extraPaths": [
+    "C:\\Users\\SauloJustiniano\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+  ],
+  "python.envFile": "${workspaceFolder}/.env",
+
+  // Format On Save / linguagem TypeScript e JavaScript / null - Todas as linguagens
+  "editor.formatOnSave": true, // Formata o código sempre que salvamos
+  // "editor.defaultFormatter": "null",
+
+  "sync.gist": "248544c7b4ec76f4142bcf202b53e3ed",
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.quietSync": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+
+  "cSpell.language": "en,pt",
+  "editor.suggestSelection": "first",
+  "codesnap.backgroundColor": "transparent",
+  "codesnap.transparentBackground": true,
+  "codesnap.boxShadow": "0 0 0",
+  "cSpell.userWords": [
+    "chakra",
+    "middlewares",
+    "prefetch",
+    "rocketseat",
+    "upsert"
+  ],
+
+  "splitHTMLAttributes.closingBracketOnNewLine": true,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+
+  "python.analysis.extraPaths": [
+    "C:\\Users\\SauloJustiniano\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+  ]
 }
