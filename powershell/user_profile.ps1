@@ -1,3 +1,6 @@
+# ---------------------------------------------------------------------------------------------
+#                                          settings
+# ---------------------------------------------------------------------------------------------
 # Set PowerShell to UTF-8
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
@@ -6,10 +9,10 @@ Import-Module posh-git
 Import-Module oh-my-posh
 
 # Load prompt config
-$omp_config = Join-Path $PSScriptRoot ".\rocketshell.omp.json"
+$omp_config = Join-Path $PSScriptRoot "./powerlevel10k_rainbow(modded).omp.json"
 oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
  
-# Icons
+# Terminal-Icons
 Import-Module -Name Terminal-Icons
 
 # Env
@@ -29,37 +32,47 @@ function touch {
   }
 }
 
-# Utilities
+# ---------------------------------------------------------------------------------------------
+#                                          function
+# ---------------------------------------------------------------------------------------------
 function which ($command) {
   Get-Command -Name $command -ErrorAction SilentlyContinue |
     Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
-
 function d {
   cd 'D:\'
 }
-
-function c {
-  cd 'C:\Users\SauloJustiniano\'
-}
-
-function dev-p {
-  cd 'D:\development\projetos\'
-}
-
 function dev {
-  cd 'D:\development\'
+  cd 'D:\Development\'
 }
-
+function cev {
+  cd 'D:\Development\curso-em-video'
+}
+function rkt {
+  cd 'D:\Development\rocketseat'
+}
+function wl {
+  wsl -l -v
+}
+function ws {
+  wsl --shutdown
+}
+function ep {
+  explorer .
+}
 function q {
   cd ..
 }
-
-function mine {
-  explorer "C:\Users\SauloJustiniano\Appdata\Roaming\.minecraft"
+function qq {
+  cd ../../
+}
+function qqq {
+  cd ../../../
 }
 
-# Alias
+# ---------------------------------------------------------------------------------------------
+#                                          aliases
+# ---------------------------------------------------------------------------------------------
 Set-Alias -Name serv -Value Get-Service
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name ll -Value ls
@@ -68,12 +81,15 @@ Set-Alias -Name st -Value status
 Set-Alias -Name g -Value git
 Set-Alias -Name grep -Value findstr
 
-Set-Alias np "C:\Windows\notepad.exe"
+Set-Alias note "C:\Windows\notepad.exe"
 Set-Alias tig "C:\Program Files\Git\usr\bin\tig.exe"
 Set-Alias less "C:\Program Files\Git\usr\bin\less.exe"
 
-# PSReadLine
+# ---------------------------------------------------------------------------------------------
+#                                          PSReadLine
+# ---------------------------------------------------------------------------------------------
+# Set-PSReadLineOption -PredictionViewStyle ListView
+# Set-PSReadLineOption -PredictionSource History
 # Set-PSReadLineOption -EditMode Emacs
 # Set-PSReadLineOption -BellStyle None
 # Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
-# Set-PSReadLineOption -PredictionSource History

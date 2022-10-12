@@ -1,115 +1,71 @@
-# Caminho para sua instalação oh-my-zsh.
-export ZSH="$HOME/.oh-my-zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
+# ------------------------------------------------------------------------------
+#                                  settings
+# ------------------------------------------------------------------------------
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export ANDROID_HOME=~/Android/Sdk
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# ------------------------------------------------------------------------------
+#                                  zsh theme
+# ------------------------------------------------------------------------------
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="spaceship"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # ------------------------------------------------------------------------------
-#                                  configuration
+#                               section - foobar
 # ------------------------------------------------------------------------------
-
-SPACESHIP_FOOBAR_SHOW="${SPACESHIP_FOOBAR_SHOW=true}"
-SPACESHIP_FOOBAR_ASYNC="${SPACESHIP_FOOBAR_ASYNC=true}"
-SPACESHIP_FOOBAR_PREFIX="${SPACESHIP_FOOBAR_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"}"
-SPACESHIP_FOOBAR_SUFFIX="${SPACESHIP_FOOBAR_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_FOOBAR_SYMBOL="${SPACESHIP_FOOBAR_SYMBOL="🚀 "}"
-SPACESHIP_FOOBAR_COLOR="${SPACESHIP_FOOBAR_COLOR="white"}"
-
-# Spaceshipt Prompt and Order
-SPACESHIP_PROMPT_ORDER=(
-  user          # Seção de nome de usuário
-  dir           # Seção do diretório atual
-  host          # Seção do nome do host
-  git           # Seção Git (git_branch + git_status)
-  hg            # Seção Mercurial (hg_branch  + hg_status)
-  line_sep      # Quebra de linha
-  jobs          # Indicador de jobs em segundo plano
-  exit_code     # Seção de código de saída
-  char          # Caractere de prompt
-
-  package       # Package version
-  node          # Seção Node.js
-  php           # PHP section
-  python        # Python section
-  java          # Java section
-  docker        # Seção do Docker
-  aws           # Seção Amazon Web Services
-  venv          # Seção virtualenv
-  dotnet        # Seção .NET
-  async         # Indicador de trabalhos Async < --- aviso não ativado
-
-  # hg            # Seção Mercurial (hg_branch  + hg_status)
-  # ruby          # Seção Ruby
-  # terraform     # Seção do espaço de trabalho do Terraform
-  # conda         # Seção conda virtualenv
-  # kubectl       # Seção de contexto do Kubectl
-  # elm           # Elm section
-  # xcode         # Xcode section
-  # elixir        # Elixir section
-  # swift         # Swift section
-  # golang        # Go section
-  # rust          # Rust section
-  # haskell       # Haskell Stack section
-  # julia         # Seção Julia
-  # ibmcloud      # Seção IBM Cloud
-  # gcloud        # Seção do Google Cloud Platform
-  # time          # Seção de carimbos de hora
-  # battery       # Nível e status da bateria
-  # exec_time     # Tempo de execução
-)
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-
-# Exibir nome de usuário sempre
-SPACESHIP_USER_SHOW=always
-
-SPACESHIP_CHAR_SYMBOL="🚀❯"
-SPACESHIP_CHAR_SUFFIX=" "
-
-# Mostrar hora no prompt
-SPACESHIP_TIME_SHOW=false
-
-# Ativar Async (o padrão é True)
-SPACESHIP_PROMPT_ASYNC=false
-
-# Não truncar o caminho em repositórios
-SPACESHIP_DIR_TRUNC_REPO=true
-
-SPACESHIP_HOST_SHOW=true
-
-# ------------------------------------------------------------------------------
-#                                     section
-# ------------------------------------------------------------------------------
-
 # Show foobar status
 # spaceship_ prefix before section's name is required!
 # Otherwise this section won't be loaded.
 spaceship_foobar() {
-  # If SPACESHIP_FOOBAR_SHOW is false, don't show foobar section
+  # Se SPACESHIP_FOOBAR_SHOW for falso, não mostre a seção foobar
   [[ $SPACESHIP_FOOBAR_SHOW == false ]] && return
 
-  # Check if foobar command is available for execution
+  # Verifica se o comando foobar está disponível para execução
   spaceship::exists foobar || return
 
-  # Show foobar section only when there are foobar-specific files in current
-  # working directory.
+  # Mostra a seção foobar apenas quando há arquivos específicos do foobar no atual diretório de trabalho.
 
-  # spaceship::upsearch utility helps finding files up in the directory tree.
+  # O utilitário spaceship::upsearch ajuda a encontrar arquivos na árvore de diretórios.
   local is_foobar_context="$(spaceship::upsearch foobar.conf)"
-  # Here glob qualifiers are used to check if files with specific extension are
-  # present in directory. Read more about them here:
+
+  # Aqui os qualificadores glob são usados para verificar se os arquivos com extensão específica são
+  # presente no diretório. Leia mais sobre eles aqui:
   # http://zsh.sourceforge.net/Doc/Release/Expansion.html
-  [[ -n "$is_foobar_context" || -n *.foo(#qN^/) || -n *.bar(#qN^/) ]] || return
+  [[ -n "$is_foobar_context" || -n *.foo(qN^/) || -n *.bar(qN^/) ]] || return
 
   local foobar_version="$(foobar --version)"
 
-  # Check if tool version is correct
+  # Verifique se a versão da ferramenta está correta
   [[ $tool_version == "system" ]] && return
 
-  # Display foobar section
-  # spaceship::section utility composes sections. Flags are optional
+  # Exibe a seção foobar
+  # o utilitário spaceship::section compõe as seções. As bandeiras são opcionais
   spaceship::section::v4 \
     --color "$SPACESHIP_FOOBAR_COLOR" \
     --prefix "$SPACESHIP_FOOBAR_PREFIX" \
@@ -118,27 +74,9 @@ spaceship_foobar() {
     "$foobar_status"
 }
 
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( 
-  "robbyrussell" 
-  "agnoster" 
-)
-
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="false"
-
 # ------------------------------------------------------------------------------
-# atualização
+#                                update
 # ------------------------------------------------------------------------------
-
 # Remova o comentário de uma das seguintes linhas para alterar o comportamento da atualização automática
 # zstyle ':omz:update' mode disabled  # desabilitar atualizações automáticas
 # zstyle ':omz:update' mode auto      # atualize automaticamente sem perguntar
@@ -149,73 +87,173 @@ HYPHEN_INSENSITIVE="false"
 # ------------------------------------------------------------------------------
 #                                system
 # ------------------------------------------------------------------------------
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Descomente a linha a seguir se colar URLs e outros textos estiver errado.
-DISABLE_MAGIC_FUNCTIONS="false"
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# Remova o comentário da linha a seguir para desabilitar as cores em ls
-DISABLE_LS_COLORS="false"
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# Descomente a linha a seguir para desabilitar o título do terminal de configuração automática
-DISABLE_AUTO_TITLE="false"
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-# Descomente a seguinte linha se você quiser desabilitar a autocorreção de comando
-DISABLE_CORRECTION="true"
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# Remova o comentário da linha a seguir para habilitar a correção automática do comando
-ENABLE_CORRECTION="true"
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # ------------------------------------------------------------------------------
 #                                  plugins
 # ------------------------------------------------------------------------------
-
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
-  zsh-syntax-highlighting
+  git
+  zsh-completions
   zsh-autosuggestions
-  k
+  zsh-syntax-highlighting
 )
 
+# ------------------------------------------------------------------------------
+#                                  user configuration
+# ------------------------------------------------------------------------------
+
 source $ZSH/oh-my-zsh.sh
-# source $ZSH/dotfiles/aliases
 
-ulimit -n 2048
+# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
-# ------------------------------------------------------------------------------
-#                        configuração do usuário
-# ------------------------------------------------------------------------------
+# export MANPATH="/usr/local/man:$MANPATH"
 
-export MANPATH="/usr/local/man:$MANPATH"
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# Pode ser necessário definir manualmente seu ambiente de idioma
-# Personalize de acordo com suas necessidades...
-export LANG="pt_BR.UTF-8"
-export LC_ALL="pt_BR.UTF-8"
-
-# Editor preferido para sessões locais e remotas
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch x86_64"
 
-# Caminhos caseiros
-PATH=/usr/local/sbin:/usr/local/bin:$PATH
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
 
 # ------------------------------------------------------------------------------
 #                                    aliases
 # ------------------------------------------------------------------------------
-
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-alias q="cd ../"
-alias qq="cd ../../"
-alias qqq="cd ../../../"
+
+alias q="cd .."
+alias qq="cd ../.."
+alias qqq="cd ../../.."
 alias dev="cd ~/development"
 alias cev="cd ~/development/curso-em-video"
 alias rkt="cd ~/development/rocketseat"
-alias git status='nocorrect git status'
-alias vim='nocorrect vim'
+alias exp="explorer.exe ."
+
+alias ls="exa --icons -lh" 
+alias lt="exa --icons -lh --tree --level=2" 
+alias ll="exa --icons -lha"
+
+alias vim="nocorrect vim"
+alias gitcache="git config --global credential.helper cache"
+alias git status="nocorrect git status"
+
+# alias ll="exa -l --icons -F -la"
+# alias la="ls -A"
+# alias l="ls -CF"
+# alias ll="logo-ls -la" # Logo-ls
+# alias ll="ls -alF" # Padrão
+
+# ------------------------------------------------------------------------------
+#                                    zsh
+# ------------------------------------------------------------------------------
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# ------------------------------------------------------------------------------
+#                                  spaceship
+# ------------------------------------------------------------------------------
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  hg            # Mercurial section (hg_branch  + hg_status)
+  exec_time     # Execution time
+  line_sep      # Line break
+  # vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="🚀❯"
+SPACESHIP_CHAR_SUFFIX=" "
+
+# Simplify prompt if we're using Hyper
+if [[ "$TERM_PROGRAM" == "Hyper" ]]; then
+  SPACESHIP_PROMPT_SEPARATE_LINE=false
+  SPACESHIP_DIR_SHOW=false
+  SPACESHIP_GIT_BRANCH_SHOW=false
+fi
+
+# ------------------------------------------------------------------------------
+#                                  powerlevel10k
+# ------------------------------------------------------------------------------
+# source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

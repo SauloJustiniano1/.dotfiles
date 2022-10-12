@@ -1,7 +1,7 @@
 [alias]
-ci = commit
+co = commit
 st = status
-co = checkout
+ch = checkout
 cm = checkout master
 cb = checkout -b
 sts = status -sb
