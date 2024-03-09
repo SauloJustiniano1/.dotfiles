@@ -1,6 +1,6 @@
-# ---------------------------------------------------------------------------------------------
-#                                          settings
-# ---------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+#                                   settings
+# ------------------------------------------------------------------------------
 # Set PowerShell to UTF-8
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
@@ -18,6 +18,9 @@ Import-Module -Name Terminal-Icons
 # Env
 $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 
+# ------------------------------------------------------------------------------
+#                                    Function
+# ------------------------------------------------------------------------------
 # Function "Touch" for powershell
 function touch {
   Param (
@@ -31,25 +34,14 @@ function touch {
     New-Item -Type File -Path $Path
   }
 }
-
-# ---------------------------------------------------------------------------------------------
-#                                          function
-# ---------------------------------------------------------------------------------------------
-function which ($command) {
-  Get-Command -Name $command -ErrorAction SilentlyContinue |
-    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-}
 function d {
   cd 'D:\'
 }
 function dev {
-  cd 'D:\Development\'
+  cd 'C:\development\'
 }
-function cev {
-  cd 'D:\Development\curso-em-video'
-}
-function rkt {
-  cd 'D:\Development\rocketseat'
+function dvl {
+  cd 'C:\developer\'
 }
 function wl {
   wsl -l -v
@@ -57,7 +49,7 @@ function wl {
 function ws {
   wsl --shutdown
 }
-function ep {
+function file {
   explorer .
 }
 function q {
@@ -70,10 +62,9 @@ function qqq {
   cd ../../../
 }
 
-# ---------------------------------------------------------------------------------------------
-#                                          aliases
-# ---------------------------------------------------------------------------------------------
-Set-Alias -Name serv -Value Get-Service
+# ------------------------------------------------------------------------------
+#                                 Aliases
+# ------------------------------------------------------------------------------
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name ll -Value ls
 Set-Alias -Name cls -Value clear
@@ -85,9 +76,9 @@ Set-Alias note "C:\Windows\notepad.exe"
 Set-Alias tig "C:\Program Files\Git\usr\bin\tig.exe"
 Set-Alias less "C:\Program Files\Git\usr\bin\less.exe"
 
-# ---------------------------------------------------------------------------------------------
-#                                          PSReadLine
-# ---------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+#                               PSReadLine
+# ------------------------------------------------------------------------------
 # Set-PSReadLineOption -PredictionViewStyle ListView
 # Set-PSReadLineOption -PredictionSource History
 # Set-PSReadLineOption -EditMode Emacs

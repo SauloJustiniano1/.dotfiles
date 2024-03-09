@@ -1,5 +1,5 @@
-[ // Coloque seus atalhos de teclado neste arquivo para substituir o defaultsauto[]
-  { 
+[
+  {
     "key": "ctrl+alt+i",
     "command": "python.execInTerminal-icon"
   },
@@ -7,11 +7,13 @@
     "key": "ctrl+shift+alt",
     "command": "python.runLinting"
   },
-  { // Python Terminal
+  {
+    // Python Terminal
     "key": "ctrl+alt+p",
     "command": "python.execInTerminal"
   },
-  { // Encasulamento
+  {
+    // Encasulamento
     "key": "ctrl+alt+enter",
     "command": "editor.emmet.action.wrapWithAbbreviation"
   },
@@ -40,32 +42,38 @@
     "command": "editor.action.formatSelection",
     "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
   },
-  { // Formatação Automatica
+  {
+    // Formatação Automatica
     "key": "shift+f",
     "command": "notebook.formatCell",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
   },
-  { // Formatação Automatica
+  {
+    // Formatação Automatica
     "key": "shift+f",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
-  { // Formatação Automatica
+  {
+    // Formatação Automatica
     "key": "shift+f",
     "command": "editor.action.formatDocument.none",
     "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
   },
-  { // Abrir terminal Interno
+  {
+    // Abrir terminal Interno
     "key": "alt+oem_3",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
-  { // Avrir terminal Externo
+  {
+    // Avrir terminal Externo
     "key": "ctrl+shift+c",
     "command": "workbench.action.terminal.openNativeConsole",
     "when": "!terminalFocus"
   },
-  { // Fechar terminal Interno
+  {
+    // Fechar terminal Interno
     "key": "alt+w",
     "command": "workbench.action.terminal.kill"
   }
